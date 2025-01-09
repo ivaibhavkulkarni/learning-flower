@@ -30,37 +30,37 @@ export default function LearningFlower({ onPetalClick }) {
 
       {/* Petals with adjusted angles */}
       <path
-        d={petalPath(0)} // Petal 1 starts at 0 degrees
+        d={petalPath(270)} // Petal 1 starts at 270 degrees
         className={petalStyles.physical}
         onClick={() => onPetalClick('physical')}
       />
       <path
-        d={petalPath(51.43)} // Petal 2 starts at 51.43 degrees
+        d={petalPath(270 + 51.43)} // Petal 2 starts at 321.43 degrees
         className={petalStyles.literacy}
         onClick={() => onPetalClick('literacy')}
       />
       <path
-        d={petalPath(102.86)} // Petal 3 starts at 102.86 degrees
+        d={petalPath(270 + 51.43 * 2)} // Petal 3 starts at 372.86 degrees
         className={petalStyles.communication}
         onClick={() => onPetalClick('communication')}
       />
       <path
-        d={petalPath(154.29)} // Petal 4 starts at 154.29 degrees
+        d={petalPath(270 + 51.43 * 3)} // Petal 4 starts at 64.29 degrees
         className={petalStyles.expressiveArts}
         onClick={() => onPetalClick('expressiveArts')}
       />
       <path
-        d={petalPath(205.72)} // Petal 5 starts at 205.72 degrees
+        d={petalPath(270 + 51.43 * 4)} // Petal 5 starts at 115.72 degrees
         className={petalStyles.personalSocial}
         onClick={() => onPetalClick('personalSocial')}
       />
       <path
-        d={petalPath(257.15)} // Petal 6 starts at 257.15 degrees
+        d={petalPath(270 + 51.43 * 5)} // Petal 6 starts at 167.15 degrees
         className={petalStyles.understanding}
         onClick={() => onPetalClick('understanding')}
       />
       <path
-        d={petalPath(308.58)} // Petal 7 starts at 308.58 degrees
+        d={petalPath(270 + 51.43 * 6)} // Petal 7 starts at 218.58 degrees
         className={petalStyles.numeracy}
         onClick={() => onPetalClick('numeracy')}
       />
