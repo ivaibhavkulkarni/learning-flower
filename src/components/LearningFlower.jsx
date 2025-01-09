@@ -79,7 +79,8 @@ export default function LearningFlower({ onPetalClick }) {
       <text x={getTextPosition(220 + 51.43 * 2).x} y={getTextPosition(265 + 51.43 * 2).y} textAnchor="middle" fill="white" className="text-sm">Communication</text>
       <text x={getTextPosition(270 + 51.43 * 3).x} y={getTextPosition(260 + 51.43 * 3).y} textAnchor="middle" fill="white" className="text-sm">Expressive Arts</text>
       <text x={getTextPosition(270 + 51.43 * 4).x} y={getTextPosition(210 + 51.43 * 4).y} textAnchor="middle" fill="white" className="text-sm">Personal & Social</text>
-      <text x={getTextPosition(239 + 51.43 * 5).x} y={getTextPosition(275 + 51.43 * 5).y} textAnchor="middle" fill="white" className="text-sm">Understanding the world</text>
+      <text x={getTextPosition(239 + 51.43 * 5).x} y={getTextPosition(275 + 51.43 * 5).y} textAnchor="middle" fill="white" className="text-sm"><tspan x={getTextPosition(239 + 51.43 * 5).x} dy="0">Understanding</tspan>
+      <tspan x={getTextPosition(239 + 51.43 * 5).x} dy="12">the world</tspan></text>
       <text x={getTextPosition(270 + 51.43 * 6).x} y={getTextPosition(270 + 51.43 * 6).y} textAnchor="middle" fill="white" className="text-sm">Numeracy</text>
     </svg>
   );
