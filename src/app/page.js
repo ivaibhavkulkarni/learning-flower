@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import LearningFlower from '../components/LearningFlower.jsx'
-import ContentDisplay from '../components/ContentDisplay.jsx'
-import { learningAreasData } from '../data/learningAreas.js'
-import { useState } from 'react'
+import LearningFlower from '../components/LearningFlower.jsx';
+import ContentDisplay from '../components/ContentDisplay.jsx';
+import { learningAreasData } from '../data/learningAreas.js';
+import { useState } from 'react';
 
 export default function Home() {
-  const [selectedArea, setSelectedArea] = useState(null)
+  const [selectedArea, setSelectedArea] = useState('physical'); // Default to "physical"
 
   return (
     <main className="flex min-h-screen">
@@ -14,9 +14,8 @@ export default function Home() {
         <LearningFlower onPetalClick={setSelectedArea} />
       </div>
       <div className="w-1/2 bg-gray-50 p-8">
-        <ContentDisplay area={selectedArea ? learningAreasData[selectedArea] : null} />
+        <ContentDisplay area={learningAreasData[selectedArea]} />
       </div>
     </main>
-  )
+  );
 }
-
