@@ -6,14 +6,17 @@ import { learningAreasData } from '../data/learningAreas.js';
 import { useState } from 'react';
 
 export default function Home() {
-  const [selectedArea, setSelectedArea] = useState('physical'); // Default to "physical"
+  const [selectedArea, setSelectedArea] = useState('physical');
 
   return (
-    <main className="flex min-h-screen">
-      <div className="w-1/2 flex items-center justify-center p-8">
+    <main className="flex flex-col lg:flex-row min-h-screen">
+      {/* Flower section */}
+      <div className="w-full lg:w-1/2 flex items-center justify-center p-4 lg:p-8">
         <LearningFlower onPetalClick={setSelectedArea} />
       </div>
-      <div className="w-1/2 bg-gray-50 p-8">
+
+      {/* Content section */}
+      <div className="w-full lg:w-1/2 bg-gray-50 p-4 lg:p-8">
         <ContentDisplay area={learningAreasData[selectedArea]} />
       </div>
     </main>
