@@ -1,9 +1,9 @@
-"use client"
-
 import React, { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
 
 export default function LearningFlower({ onPetalClick }) {
   const [hoveredPetal, setHoveredPetal] = useState(null)
+  const [focusedPetal, setFocusedPetal] = useState(null)
 
   const petalStyles = {
     physical: "fill-[#DC2626]",
@@ -13,6 +13,16 @@ export default function LearningFlower({ onPetalClick }) {
     personalSocial: "fill-[#2563EB]",
     understanding: "fill-[#7C3AED]",
     numeracy: "fill-[#EC4899]",
+  }
+
+  const petalInfo = {
+    physical: "Develops motor skills and body awareness",
+    literacy: "Builds reading, writing, and language skills",
+    communication: "Enhances verbal and non-verbal expression",
+    expressiveArts: "Fosters creativity and self-expression",
+    personalSocial: "Promotes emotional growth and social skills",
+    understanding: "Explores the world and how it works",
+    numeracy: "Develops mathematical thinking and problem-solving",
   }
 
   const radius = 180
@@ -34,93 +44,90 @@ export default function LearningFlower({ onPetalClick }) {
     return { x, y }
   }
 
+  const handlePetalClick = (key) => {
+    setFocusedPetal(focusedPetal === key ? null : key)
+    onPetalClick(key)
+  }
+
   return (
-    <div className="w-full max-w-[600px] aspect-square">
+    <div className="w-full max-w-[600px] aspect-square relative">
       <svg viewBox="0 0 400 400" className="w-full h-full">
-        <circle cx="200" cy="200" r="5" fill="white" />
+        <motion.circle
+          cx="200"
+          cy="200"
+          r="5"
+          fill="white"
+          animate={{
+            r: [5, 7, 5],
+            opacity: [1, 0.5, 1],
+          }}
+          transition={{
+            duration: 2,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "easeInOut",
+          }}
+        />
 
         {Object.entries(petalStyles).map(([key, style], index) => (
-          <g
+          <motion.g
             key={key}
-            className={`transition-transform duration-300 ease-in-out ${hoveredPetal === key ? "scale-110" : ""}`}
+            className={`transition-transform duration-300 ease-in-out ${
+              hoveredPetal === key && !focusedPetal ? "scale-110" : ""
+            }`}
             onMouseEnter={() => setHoveredPetal(key)}
             onMouseLeave={() => setHoveredPetal(null)}
-            onClick={() => onPetalClick(key)}
+            onClick={() => handlePetalClick(key)}
+            animate={
+              focusedPetal
+                ? {
+                    scale: focusedPetal === key ? 1.2 : 0.8,
+                    opacity: focusedPetal === key ? 1 : 0.5,
+                  }
+                : { scale: 1, opacity: 1 }
+            }
+            transition={{ duration: 0.3 }}
           >
             <path d={petalPath(245 + 51.43 * index)} className={`${style} hover:brightness-110 cursor-pointer`} />
-          </g>
+            <text
+              x={
+                key === "communication"
+                  ? getTextPosition(270 + 51.43 * index).x - 37.8 // Shift by 1 cm (37.8px)
+                  : getTextPosition(270 + 51.43 * index).x
+              }
+              y={getTextPosition(270 + 51.43 * index).y}
+              textAnchor="middle"
+              fill="white"
+              className="text-sm pointer-events-none"
+            >
+              {key === "understanding" ? (
+                <>
+                  <tspan x={getTextPosition(239 + 51.43 * 5).x} dy="0">
+                    Understanding
+                  </tspan>
+                  <tspan x={getTextPosition(239 + 51.43 * 5).x} dy="12">
+                    the world
+                  </tspan>
+                </>
+              ) : (
+                key.charAt(0).toUpperCase() + key.slice(1)
+              )}
+            </text>
+          </motion.g>
         ))}
-
-        <text
-          x={getTextPosition(270).x}
-          y={getTextPosition(260).y}
-          textAnchor="middle"
-          fill="white"
-          className="text-sm pointer-events-none"
-        >
-          Physical
-        </text>
-        <text
-          x={getTextPosition(270 + 51.43).x}
-          y={getTextPosition(270 + 51.43).y}
-          textAnchor="middle"
-          fill="white"
-          className="text-sm pointer-events-none"
-        >
-          Literacy
-        </text>
-        <text
-          x={getTextPosition(220 + 51.43 * 2).x}
-          y={getTextPosition(265 + 51.43 * 2).y}
-          textAnchor="middle"
-          fill="white"
-          className="text-sm pointer-events-none"
-        >
-          Communication
-        </text>
-        <text
-          x={getTextPosition(270 + 51.43 * 3).x}
-          y={getTextPosition(260 + 51.43 * 3).y}
-          textAnchor="middle"
-          fill="white"
-          className="text-sm pointer-events-none"
-        >
-          Expressive Arts
-        </text>
-        <text
-          x={getTextPosition(270 + 51.43 * 4).x}
-          y={getTextPosition(210 + 51.43 * 4).y}
-          textAnchor="middle"
-          fill="white"
-          className="text-sm pointer-events-none"
-        >
-          Personal & Social
-        </text>
-        <text
-          x={getTextPosition(239 + 51.43 * 5).x}
-          y={getTextPosition(275 + 51.43 * 5).y}
-          textAnchor="middle"
-          fill="white"
-          className="text-sm pointer-events-none"
-        >
-          <tspan x={getTextPosition(239 + 51.43 * 5).x} dy="0">
-            Understanding
-          </tspan>
-          <tspan x={getTextPosition(239 + 51.43 * 5).x} dy="12">
-            the world
-          </tspan>
-        </text>
-        <text
-          x={getTextPosition(270 + 51.43 * 6).x}
-          y={getTextPosition(270 + 51.43 * 6).y}
-          textAnchor="middle"
-          fill="white"
-          className="text-sm pointer-events-none"
-        >
-          Numeracy
-        </text>
       </svg>
+      <AnimatePresence>
+        {focusedPetal && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
+            className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white text-black p-4 rounded-lg shadow-lg"
+          >
+            <h3 className="text-lg font-bold mb-2">{focusedPetal.charAt(0).toUpperCase() + focusedPetal.slice(1)}</h3>
+            <p>{petalInfo[focusedPetal]}</p>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   )
 }
-
