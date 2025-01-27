@@ -121,8 +121,7 @@ export default function LearningFlower({ onPetalClick }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
-            className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white text-black p-4 rounded-lg shadow-lg"
-          >
+            className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[rgba(255,255,255,0.3)] text-black p-4 rounded-lg shadow-lg">
             <h3 className="text-lg font-bold mb-2">{focusedPetal.charAt(0).toUpperCase() + focusedPetal.slice(1)}</h3>
             <p>{petalInfo[focusedPetal]}</p>
           </motion.div>
