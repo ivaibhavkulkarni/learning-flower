@@ -21,31 +21,31 @@ export default function Home() {
       case 'social':
         return {
           title: 'Social Well-being',
-          description: 'Learn about the importance of social connections.',
+          description: 'Developing teamwork, communication, and interpersonal skills to foster meaningful relationships and community spirit.',
           videoId: 'dQw4w9WgXcQ', // Example video ID
         };
       case 'physical':
         return {
           title: 'Physical Health',
-          description: 'Discover ways to improve your physical health.',
+          description: 'Encouraging active movement, motor skill development, and overall well-being through play and exercise.',
           videoId: 'kJQP7kiw5Fk',
         };
       case 'intellectual':
         return {
           title: 'Intellectual Growth',
-          description: 'Stimulate your mind with new challenges and learning.',
+          description: 'Stimulating curiosity, problem-solving, and cognitive growth to build a strong foundation for lifelong learning.',
           videoId: 'e6UdM4kN8tM',
         };
       case 'creative':
         return {
           title: 'Creative Expression',
-          description: 'Unleash your creative potential.',
+          description: 'Nurturing imagination and artistic expression through music, art, drama, and innovative thinking.',
           videoId: 'f9zgAkM9Jqk',
         };
       case 'emotional':
         return {
           title: 'Emotional Health',
-          description: 'Understand and manage your emotions.',
+          description: 'Building self-awareness, resilience, and empathy to support emotional well-being and positive mental health.',
           videoId: '0xXfw-HybEo',
         };
       default:

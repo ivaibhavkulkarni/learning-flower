@@ -1,37 +1,37 @@
 export const learningAreasData = {
     physical: {
       title: "Physical Development",
-      description: "Physical development involves providing opportunities for young children to be active and interactive; and to develop their co-ordination, control, and movement.",
+      description: "Encouraging active movement and development of motor skills for overall health and well-being.",
       videoUrl: "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi"
     },
     literacy: {
       title: "Literacy",
-      description: "Literacy development involves encouraging children to link sounds and letters and to begin to read and write. Children must be given access to a wide range of reading materials.",
+      description: "Building foundational reading, writing, and comprehension skills for effective communication.",
       videoUrl: "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi"
     },
     communication: {
       title: "Communication & Language",
-      description: "Development involves giving children opportunities to experience a rich language environment; to develop their confidence and skills in expressing themselves.",
+      description: "Enhancing speaking and listening abilities to foster clear expression and understanding.",
       videoUrl: "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi"
     },
     expressiveArts: {
       title: "Expressive Arts & Design",
-      description: "Enabling children to explore and play with a wide range of media and materials, as well as providing opportunities for sharing their thoughts, ideas, and feelings.",
+      description: "Nurturing creativity and imagination through art, music, drama, and design.",
       videoUrl: "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi"
     },
     personalSocial: {
       title: "Personal, Social & Emotional",
-      description: "Helping children to develop a positive sense of themselves, and others; to form positive relationships and develop respect for others.",
+      description: "Supporting emotional intelligence, social skills, and personal growth.",
       videoUrl: "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi"
     },
     understanding: {
       title: "Understanding the World",
-      description: "Guiding children to make sense of their physical world and their community through opportunities to explore, observe and find out about people, places, technology and the environment.",
+      description: "Exploring science, technology, history, and nature to develop curiosity and knowledge.",
       videoUrl: "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi"
     },
     numeracy: {
       title: "Numeracy",
-      description: "Providing children with opportunities to develop and improve their skills in counting, understanding and using numbers, calculating simple addition and subtraction problems.",
+      description: "Strengthening problem-solving and numerical skills for logical and analytical thinking.",
       videoUrl: "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi"
     }
   }
